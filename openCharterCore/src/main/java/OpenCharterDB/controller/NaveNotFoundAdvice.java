@@ -1,4 +1,4 @@
-package OpenCharterDB.Infocontroller;
+package OpenCharterDB.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ControllerAdvice
-public class InfoNotFoundAdvice {
+public class NaveNotFoundAdvice {
 
     @ResponseBody
-    @ExceptionHandler(InfoNotFoundException.class)
+    @ExceptionHandler(NaveNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    String InfoNotFoundHandler(InfoNotFoundException ex) {
+    String NaveNotFoundHandler(NaveNotFoundException ex) {
         return ex.getMessage();
     }
 }

@@ -1,10 +1,10 @@
-package OpenCharterDB.Navecontroller;
+package OpenCharterDB.controller;
 
 import java.util.List;
 import java.util.stream.Collectors;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
-import OpenCharterDB.Assembler.NaveModelAssembler;
+import OpenCharterDB.assembler.NaveModelAssembler;
 import org.springframework.hateoas.*;
 
 import org.springframework.http.ResponseEntity;

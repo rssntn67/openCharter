@@ -1,7 +1,7 @@
-package OpenCharterDB.Navecontroller;
+package OpenCharterDB.controller;
 
 public class NaveNotFoundException extends RuntimeException {
-        NaveNotFoundException(Long id) {
+        public NaveNotFoundException(Long id) {
             super("Impossibile trovare la nave " + id);
         }
     }

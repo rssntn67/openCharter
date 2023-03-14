@@ -1,8 +1,8 @@
-package OpenCharterDB.Assembler;
+package OpenCharterDB.assembler;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
-import OpenCharterDB.Infocontroller.InfoController;
+import OpenCharterDB.controller.InfoController;
 import OpenCharterDB.model.Info;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.RepresentationModelAssembler;

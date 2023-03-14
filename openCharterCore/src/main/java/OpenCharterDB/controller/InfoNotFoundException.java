@@ -1,7 +1,7 @@
-package OpenCharterDB.Infocontroller;
+package OpenCharterDB.controller;
 
 public class InfoNotFoundException extends RuntimeException {
-    InfoNotFoundException(Long id) {
+    public InfoNotFoundException(Long id) {
         super("Impossibile trovare info: " + id);
     }
 }

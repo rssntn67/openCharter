@@ -1,4 +1,4 @@
-package OpenCharterDB.Infocontroller;
+package OpenCharterDB.controller;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -8,7 +8,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 import OpenCharterDB.model.Info;
 import OpenCharterDB.repository.InfoRepository;
 import org.springframework.hateoas.*;
-import OpenCharterDB.Assembler.InfoModelAssembler;
+import OpenCharterDB.assembler.InfoModelAssembler;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
