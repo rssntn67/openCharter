@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Geolocation, GeolocationPosition, GeolocationOptions } from '@capacitor/geolocation';
+import { Geolocation, Position, PositionOptions } from '@capacitor/geolocation';
 import { BehaviorSubject } from 'rxjs';
 import { isNull } from 'util';
 
@@ -10,14 +10,14 @@ import { isNull } from 'util';
 export class GpsService {
 
   // La posizione corrente dell'utente
-  private currentPosition = new BehaviorSubject<GeolocationPosition>(null!);
+  private currentPosition = new BehaviorSubject<Position>(null!);
 
   constructor() { }
 
   // Ottiene la posizione corrente dell'utente
-  getCurrentPosition(): BehaviorSubject<GeolocationPosition> {
+  getCurrentPosition(): BehaviorSubject<Position> {
     // Opzioni per la richiesta di posizione
-    const options: GeolocationOptions = {
+    const options: PositionOptions = {
       enableHighAccuracy: true,
       timeout: 5000,
       maximumAge: 0
