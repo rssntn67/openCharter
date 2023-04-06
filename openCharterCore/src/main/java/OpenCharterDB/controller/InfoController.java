@@ -56,6 +56,7 @@ public class InfoController {
                 .map(info -> {
                     info.setLat(newInfo.getLat());
                     info.setLon(newInfo.getLon());
+                    info.setData(newInfo.getData());
                     return repository.save(info);
                 })
                 .orElseGet(() -> {
