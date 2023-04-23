@@ -1,2 +1,2 @@
 # openCharter
-In questo progetto vanno scritte lòe informazioni documentali
+In questo progetto vanno scritte le informazioni documentali
