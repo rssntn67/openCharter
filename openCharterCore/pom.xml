@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>OpenCharterCore</artifactId>
+	<artifactId>openchartercore</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>db</name>
 	<description>prova database</description>
