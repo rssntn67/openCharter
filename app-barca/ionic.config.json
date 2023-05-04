@@ -1,7 +1,0 @@
-{
-  "name": "app-barca",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
