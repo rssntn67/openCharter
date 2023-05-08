@@ -8,6 +8,7 @@ import OpenCharterDB.assembler.NaveModelAssembler;
 import org.springframework.hateoas.*;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,11 +20,13 @@ import OpenCharterDB.model.Nave;
 import OpenCharterDB.repository.NaveRepository;
 
 
+@CrossOrigin(origins = "*")
 @RestController
 public class NaveController {
 
     private final NaveRepository repository;
     private final NaveModelAssembler assembler;
+
     NaveController(NaveRepository repository, NaveModelAssembler assembler) {
         this.repository = repository;
         this.assembler = assembler;
