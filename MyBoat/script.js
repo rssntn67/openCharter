@@ -23,5 +23,15 @@ function onMapClick(e) {
         .openOn(map);
 }
 
+function httpGet(theUrl)
+{
+    console.log(theUrl);
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    console.log(xmlHttp.responseText);
+    return xmlHttp.responseText;
+}
+
 map.on('click', onMapClick);
 
