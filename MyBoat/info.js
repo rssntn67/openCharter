@@ -1,4 +1,4 @@
-export class Nave {
+export class Info {
     id;
     idnave;
     data;

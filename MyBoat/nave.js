@@ -22,5 +22,9 @@ export class Nave {
         this.larg=larg;
         this.alt=alt;
     }
+
+    toString() {
+    return ("Nome= "+this.name);
+  }
     
 }
