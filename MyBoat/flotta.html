@@ -14,20 +14,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-     
+
  </head>
 <body>
 
     <header>
-        <a class="logo"><img src="navelogo.png" style="width: 64px; height: 64px;"> <!--<i class="ri-home-heart-fill">--></i><span>MyBoat</span></a>
+        <a class="logo"><img src="navelogo.png"> <!--<i class="ri-home-heart-fill">--></i><span>MyBoat</span></a>
 
         <ul class="navbar">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="#">Mappa</a></li>
-            <li><a href="#">Flotta</a></li>
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="#" class="active">Flotta</a></li>
             <li><a href="#">About Us</a></li>
             <li><a href="#">Contact</a></li>
-            <li><input type="button" value="navi" onclick="get()">
+            <li><input type="button" value="navi" onclick="iniNave()">
             </li>
         </ul>
 
@@ -36,24 +35,17 @@
             <a href="#">Register</a>
             <div class="bx bx-menu" id="menu-icon"></div>
         </div>
+
     </header>
+
+    <div id="id01"> </div> 
+
+
+
+
+    
     <!--js link-->
     <script type="text/javascript" src="flotta.js"></script>
-    <script>
-        function get() 
-        {
-            /*console.log('sandokan');
-            //httpGet('https://myboatcore.arsinfo.it/navi');
-              httpGet('http://localhost:9001/navi',function(response) {
-            console.log(response);
-            // fare qualcosa con la risposta
-            });*/
-            console.log("Non funziona");
-            iniNave();
-        }
-
-</script>
-
 
 </body>
 </html>

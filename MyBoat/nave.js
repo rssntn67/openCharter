@@ -1,4 +1,4 @@
-export class Nave {
+ class Nave {
     id;
     name;
     tipo;
@@ -23,8 +23,9 @@ export class Nave {
         this.alt=alt;
     }
 
-    toString() {
-    return ("Nome= "+this.name);
-  }
+    toString()
+    {
+        return("Name: " + this.name);
+    }
     
 }

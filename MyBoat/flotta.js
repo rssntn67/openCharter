@@ -1,3 +1,11 @@
+let menu = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menu.onclick = () => {
+    menu.classList.toggle('bx-x');
+    navbar.classList.toggle('open');
+}
+
 class Nave {
     id;
     name;
@@ -22,58 +30,56 @@ class Nave {
         this.larg=larg;
         this.alt=alt;
     }
+     //${this.id}, Name: ${this.name}, Tipo: ${this.tipo}, Nazione: ${this.nazione}, Portorif: ${this.portorif}, Armatore: ${this.armatore}, Proprietario: ${this.proprietario}, Lung: ${this.lung}, Larg: ${this.larg}, Alt: ${this.alt};
 
-    toString() {
-    return `ID: ${this.id}, Name: ${this.name}, Tipo: ${this.tipo}, Nazione: ${this.nazione}, Portorif: ${this.portorif}, Armatore: ${this.armatore}, Proprietario: ${this.proprietario}, Lung: ${this.lung}, Larg: ${this.larg}, Alt: ${this.alt}`;
+toString() {
+    return ("<br><strong>NAVE "+this.id+"</strong><br>Nome= "+this.name+"<br>Tipo di imbarcazione= "+this.tipo+"<br>Nazione= "+this.nazione+"<br>Porto di riferimento= "+this.portorif+"<br>Armatore= "+this.armatore+"<br>Propretario= "+this.proprietario+"<br>Lunghezza= "+this.lung+"m<br>Larghezza= "+this.larg+"m<br>Altezza= "+this.alt+"m");
   }
-    
 }
 
-/*function httpGet(theUrl, callback)
-{
-    console.log(theUrl);
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function() {
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-            console.log(xmlHttp.statusText);
-            console.log(xmlHttp.response);
-            console.log(xmlHttp.responseType);
-            callback(xmlHttp.response);
-        }
+
+
+
+function iniNave() {
+  var num = 1;
+  var xhr = new XMLHttpRequest();
+  var outputDiv = document.getElementById('id01');
+  var stringa = "";
+
+  function sendRequest(stringa) {
+    xhr.open('GET', 'http://localhost:9001/navi/' + num);
+    xhr.send();
+
+    xhr.onload = function() {
+      if (xhr.status !== 200) {
+        // Gestisci altri tipi di errori se necessario
+        return;
+      }
+
+      var response = JSON.parse(xhr.responseText);
+
+      var obj = new Nave(
+        response.id,
+        response.name,
+        response.tipo,
+        response.nazione,
+        response.portorif,
+        response.armatore,
+        response.proprietario,
+        response.lung,
+        response.larg,
+        response.alt
+      );
+
+      console.log(obj.toString());
+      stringa += obj.toString() + "<br>";
+      outputDiv.innerHTML = stringa;
+      outputDiv.classList.add('show');
+
+      num++;
+      sendRequest(stringa); // Chiamata ricorsiva per effettuare la successiva richiesta
     };
-    xmlHttp.open( "GET", theUrl, true ); // false for synchronous request
-    xmlHttp.setRequestHeader('Access-Control-Allow-Headers', '*');
-    xmlHttp.setRequestHeader('Content-type', 'application/json');
-    xmlHttp.setRequestHeader('Access-Control-Allow-Origin', '*');
-    xmlHttp.responseType = 'json'
-    xmlHttp.send(null);
-}*/
+  }
 
-
-function iniNave()
-{
-    nave1 = new Nave(1, 'Nave1', 'Tipo1', 'Nazione1', 'PortoRif1', 'Armatore1', 'Proprietario1', 50, 10, 5);
-    console.log(nave1.toString());
-
-    fetch('http://localhost:9001/navi')
-  .then(response => response.json())
-  .then(data => {
-    // Passa i dati al costruttore della tua classe
-    const dataArray = Array.from(data); // Converti in un array
-    const n = dataArray.map(obj => new Nave(
-      obj.id,
-      obj.name,
-      obj.tipo,
-      obj.nazione,
-      obj.portorif,
-      obj.armatore,
-      obj.proprietario,
-      obj.lung,
-      obj.larg,
-      obj.alt
-    ));
-    n.map(Nave => console.log(Nave.toString()));
-  })
-  .catch(error => console.error(error));
+  sendRequest(stringa); // Prima chiamata alla funzione sendRequest con stringa inizialmente vuota
 }
-

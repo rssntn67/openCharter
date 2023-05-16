@@ -109,9 +109,36 @@ header{
     display: none;
 }
 
+.logo img
+    {
+        height: 64px;
+        width: 64px;
+    }
+
+#id01 {
+  display: none;
+  max-width: fit-content;
+  height: auto;
+  border: solid 13px black;
+  padding: 20px;
+  position: fixed;
+  top: 25%;
+  left: 12%;
+  border-radius: 20px;
+}
+
+#id01.show {
+  display: block;
+}
+
 @media (max-width: 1280px){
     header{
         padding: 14px 2%;
+        transition: .2s;
+    }
+
+    #id01{
+        left: 1%;
         transition: .2s;
     }
 
@@ -126,19 +153,42 @@ header{
         display: block;
     }
 
+    #id01{
+        left: 1%;
+    }
+
+    .logo span{
+        font-size: 1.2rem;
+    }
+
+    .logo img
+    {
+        height: 48px;
+        width: 48px;
+    }
+
+    .main a{
+        font-size: 1ì0.9rem;
+    }
+
+    .user i{
+        font-size: 20px;
+    }
+
     .navbar{
         position: absolute;
         top: 100%;
         right: -100%;
         width: 270px;
         height: 29vh;
-        background: linear-gradient(#201370, #13525F); /*Questo è il colore del quadrato che esce da telefono per il menu*/
+        background: linear-gradient(#201370, #13525F); /Questo è il colore del quadrato che esce da telefono per il menu/
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         border-radius: 10px;
         transition: all .50s ease;
     }
+
 
     .navbar a{
         display: block;
@@ -152,22 +202,20 @@ header{
         transform: translateY(5px);
     }
 
-    .navbar a.active{
-        color: var(--text-color);
-    }
-
     .navbar.open{
         right: 2%;
     }
 }
 
 #map { 
-    height: 500px;
-    width: 1000px;
+    max-height: 500px;
+    max-width: 1000px;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     position: fixed;
+    width:90%;
+    height: 90%;
 
     /*top: 50%;
     left: 40%;

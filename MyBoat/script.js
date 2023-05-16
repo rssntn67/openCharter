@@ -1,3 +1,6 @@
+let menu = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
 var map = L.map('map').setView([40.754085040909224, 14.529676579615334], 6);
 var marker = L.marker([40.754085040909224, 14.529676579615334]).addTo(map);
 
@@ -24,10 +27,6 @@ function onMapClick(e) {
 }
 
 map.on('click', onMapClick);
-
-//menu cellulare
-let menu = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
 
 menu.onclick = () => {
     menu.classList.toggle('bx-x');
