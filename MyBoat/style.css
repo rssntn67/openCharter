@@ -115,20 +115,34 @@ header{
         width: 64px;
     }
 
-#id01 {
+.navi {
   display: none;
   max-width: fit-content;
   height: auto;
   border: solid 13px black;
   padding: 20px;
-  position: fixed;
-  top: 25%;
-  left: 12%;
+  position: relative; /* Cambiato da "fixed" a "relative" */
+  top: 25%; /* Aggiusta il valore per spostare il div verticalmente */
+  left: 12%; /* Aggiusta il valore per spostare il div orizzontalmente */
   border-radius: 20px;
+  margin-bottom: 20px; /* Aggiunto per aggiungere spazio tra i div */
+}
+
+#id01 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: auto;
+  margin-top: 10%;
 }
 
 #id01.show {
   display: block;
+}
+
+.navi.show{
+    display: block;
 }
 
 @media (max-width: 1280px){
@@ -140,6 +154,7 @@ header{
     #id01{
         left: 1%;
         transition: .2s;
+        margin-top: 10%;
     }
 
     .navbar a{
@@ -155,6 +170,7 @@ header{
 
     #id01{
         left: 1%;
+        margin-top: 25%;
     }
 
     .logo span{

@@ -38,15 +38,13 @@ toString() {
 }
 
 
-
-
 function iniNave() {
   var num = 1;
   var xhr = new XMLHttpRequest();
   var outputDiv = document.getElementById('id01');
-  var stringa = "";
+  outputDiv.innerHTML = '';
 
-  function sendRequest(stringa) {
+  function sendRequest() {
     xhr.open('GET', 'http://localhost:9001/navi/' + num);
     xhr.send();
 
@@ -71,15 +69,23 @@ function iniNave() {
         response.alt
       );
 
-      console.log(obj.toString());
-      stringa += obj.toString() + "<br>";
-      outputDiv.innerHTML = stringa;
+      var objString = obj.toString(); // Converti l'oggetto in una stringa
+
+      // Rimuovi il contenuto del div "id01"
+      
+
+      // Crea un div per la stringa e aggiungilo al div di output
+      var divElement = document.createElement('div');
+      divElement.innerHTML = objString;
+      divElement.classList.add('navi'); // Aggiungi la classe desiderata
+      divElement.classList.add('show');
       outputDiv.classList.add('show');
+      outputDiv.appendChild(divElement);
 
       num++;
-      sendRequest(stringa); // Chiamata ricorsiva per effettuare la successiva richiesta
+      sendRequest(); // Chiamata ricorsiva per effettuare la successiva richiesta
     };
   }
 
-  sendRequest(stringa); // Prima chiamata alla funzione sendRequest con stringa inizialmente vuota
+  sendRequest(); // Prima chiamata alla funzione sendRequest
 }
